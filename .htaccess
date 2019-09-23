@@ -1,0 +1,20 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php 
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html 
+RewriteEngine on
+
+#RewriteEngine on
+#RewriteRule ^(.*)\.html$ $1.php
+
+#404
+ErrorDocument 404 /KoperasiSimpanPinjam/notfound.php
+
+#reject direct to config
+Options -Indexes
+ErrorDocument 403 /KoperasiSimpanPinjam/notfound.php
