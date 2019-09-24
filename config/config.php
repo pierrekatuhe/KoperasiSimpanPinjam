@@ -3,7 +3,7 @@
 session_start();
 
 //koneksi ----------------------------------------------------
-	$koneksi = mysqli_connect("localhost","root","","db_koprasi");
+	$koneksi = mysqli_connect("localhost","root","","db_koperasi");
 
 	// Check connection
 	if (mysqli_connect_errno()){
