@@ -36,11 +36,17 @@
     -->
     <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
 
+    <script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
+
     <!-- swal2 -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.css'); ?>">
+    <script src="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
 
     <!-- datetime -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/datetimepicker/build/css/bootstrap-datetimepicker.min.css'); ?>">
+
+    <!-- DataTables -->
+        <link rel="stylesheet" href="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css'); ?>">
 </head>
 <body class="light">
 <!-- Pre loader -->
@@ -114,26 +120,32 @@
                 <div class="clearfix"></div>
             </div>
         </div>
+
         <ul class="sidebar-menu">
-            <li class="header light mt-3"><strong>MAIN NAVIGATION</strong></li>
+            <li class="header light "><strong>MAIN NAVIGATION</strong></li>
+            <li class="treeview"><a href="#"><i class="icon icon icon-package s-18"></i><span>Dashboard</span></a></li>
             
-            <li class="treeview"><a href="#">
-                <i class="icon icon icon-package s-18"></i>
-                <span>Dashboard</span>
-            </a>
+            
+            <li class="header light "><strong>Referensi</strong></li>
+             <li class=""><a href="profil_perusahaan"><i class="icon icon-business_center s-18"></i>Profil Perusahaan</a></li>
+             <li class=""><a href="coa"><i class="icon icon-user s-18"></i>Daftar dan Penjelasan Akun</a></li>
+             <li class=""><a href="kebijakan_akuntansi"><i class="icon icon-assignment_turned_in s-18"></i>Kebijakan Akuntansi</a></li>
+             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Kreditor</a></li>
+             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Debitor</a></li>
+             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Kredit yang disalurkan</a></li>
             </li>
-            
-            
-            <li class="header light mt-3"><strong>ADMIN PANEL</strong></li>
-            <li class="treeview"><a href="#"><i class="icon icon-account_box s-18"></i>Users<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="panel-page-users.html"><i class="icon icon-user"></i>All Users</a>
-                    </li>
-                    <li><a href="panel-page-users-create.html"><i class="icon icon-add"></i>Add User</a>
-                    </li> 
-                </ul>
-            </li>
+
+            <li class="header light "><strong>Jurnal</strong></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Umum</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penyesuaian</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penutup</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Perolehan Kredit Bank</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Pelunasan Kredit Bank</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penyaluran Kredit</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Pelunasan Kredit Anggota</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penyaluran Kredit Chanelling</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Kas Masuk</a></li>
+            <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Kas Keluar</a></li>
         </ul>
     </section>
 </aside>

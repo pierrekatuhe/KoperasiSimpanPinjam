@@ -5,10 +5,15 @@
 </div>
 <!--/#app -->
 <script src="<?= base_url('assets/js/app.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
 <script src="<?= base_url('config/config.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
-
+<script type="text/javascript">
+	$(document).ready( function () {
+	    $('.dataTable').DataTable();
+	} );
+</script>
 <!--
 --- Footer Part - Use Jquery anywhere at page.
 --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
