@@ -85,13 +85,13 @@ function simple_ajax(datax, url_api, lokasi_berhasil = "", pesan_berhasil = "", 
 
 	NB : data dikirimkan dengan method POST
 	*/
-
+    
     $.ajax({
         type: 'POST',
         url: url_api,
         data: datax + ext_data,
         beforeSend: function(){
-          pesan_tunggu();
+          pesan_tunggu(); //ini biar nampak loading nya
         },
         success: function (data) {
             swal.close();

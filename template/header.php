@@ -35,12 +35,20 @@
     --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
     -->
     <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
+    
+    <!-- Jquery -->
+    <script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
 
     <!-- swal2 -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.css'); ?>">
-
+    <script src="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
+        
     <!-- datetime -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/datetimepicker/build/css/bootstrap-datetimepicker.min.css'); ?>">
+
+    
+
+
 </head>
 <body class="light">
 <!-- Pre loader -->
@@ -123,17 +131,18 @@
             </a>
             </li>
             
-            
+            <?php if($_SESSION['kategori']=="Admin"){ ?>
             <li class="header light mt-3"><strong>ADMIN PANEL</strong></li>
-            <li class="treeview"><a href="#"><i class="icon icon-account_box s-18"></i>Users<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="panel-page-users.html"><i class="icon icon-user"></i>All Users</a>
-                    </li>
-                    <li><a href="panel-page-users-create.html"><i class="icon icon-add"></i>Add User</a>
-                    </li> 
-                </ul>
-            </li>
+            <li class="treeview"><a href="user"><i class="icon icon-account_box s-18"></i>Users</a></li>
+            <?php } ?>
+
+            <li class="header light mt-3"><strong>REFERENSI</strong></li>
+            <li class="treeview"><a href="profil_perusahaan"><i class="icon icon-work s-18"></i>Profil Perusahaan</a></li>
+            <li class="treeview"><a href="coa"><i class="icon icon-account_box s-18"></i>Daftar dan Penjelasan Akun</a></li>
+            <li class="treeview"><a href="kebijakan_akuntansi"><i class="icon icon-gavel s-18"></i>Kebijakan Akuntansi</a></li>
+            <li class="treeview"><a href="#"><i class="icon icon-list s-18"></i>Daftar Kreditor</a></li>
+            <li class="treeview"><a href="#"><i class="icon icon-list s-18"></i>Daftar Debitor</a></li>
+            <li class="treeview"><a href="kredit_salur"><i class="icon icon-payment s-18"></i>Daftar Kredit yang Disalurkan</a></li>
         </ul>
     </section>
 </aside>

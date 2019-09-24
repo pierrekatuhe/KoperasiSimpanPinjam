@@ -4,10 +4,9 @@
 
 </div>
 <!--/#app -->
-<script src="<?= base_url('assets/js/app.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
-<script src="<?= base_url('config/config.js'); ?>"></script>
 
+<script src="<?= base_url('assets/js/app.js'); ?>"></script>
+<script src="<?= base_url('config/config.js'); ?>"></script>
 
 <!--
 --- Footer Part - Use Jquery anywhere at page.
