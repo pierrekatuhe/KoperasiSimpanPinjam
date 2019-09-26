@@ -11,14 +11,14 @@ include 'template/header.php';
         <div class="col-md-12">
             <div class="card r-0 b-0 shadow">
                 <div class="card-body">
-                    <span class="s-36 my-3" >User</span>
+                    <span class="s-36 my-3" >Kredit yang Disalurkan</span>
                     <div class="float-right">
                             <a href="tambah_kredit_salur" class="btn btn-success btn-icon-split mb-3">
-                                <i class="fa fa-plus"></i> Tambah Kredit yang Disalurkan
+                                <i class="fa fa-plus"></i> Tambah 
                             </a>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <div class="container-form  table-responsive">
+                        <table class="table table-bordered table-hover table-striped dataTable">
                             <thead>
                                 <tr>
                                     <th>No</th>

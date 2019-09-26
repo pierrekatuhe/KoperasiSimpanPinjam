@@ -14,11 +14,11 @@ include 'template/header.php';
                     <span class="s-36 my-3" >User</span>
                     <div class="float-right">
                             <a href="tambah_user" class="btn btn-success btn-icon-split mb-3">
-                                <i class="fa fa-plus"></i> Tambah User
+                                <i class="fa fa-plus"></i> Tambah 
                             </a>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <div class="container-form table-responsive">
+                        <table class="table table-bordered table-hover table-striped dataTable"  >
                             <thead>
                                 <tr>
                                     <th>No</th>

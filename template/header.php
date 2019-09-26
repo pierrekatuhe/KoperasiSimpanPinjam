@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?= base_url('assets/img/basic/favicon.ico'); ?>" type="image/x-icon">
-    <title>Paper</title>
+    <link rel="icon" href="<?= base_url('assets/img/ico.ico'); ?>" type="image/x-icon">
+    <title>Koperasi</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/app.css'); ?>">
     <style>
@@ -44,24 +44,47 @@
     <!-- swal2 -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.css'); ?>">
     <script src="<?= base_url('assets/vendor/sweetalert2/dist/sweetalert2.min.js'); ?>"></script>
-<<<<<<< HEAD
-        
-    <!-- datetime -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/datetimepicker/build/css/bootstrap-datetimepicker.min.css'); ?>">
 
-    
-
-
-=======
 
     <!-- datetime -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/datetimepicker/build/css/bootstrap-datetimepicker.min.css'); ?>">
 
     <!-- DataTables -->
         <link rel="stylesheet" href="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css'); ?>">
->>>>>>> b1c4d73c7817ec1ca80a717db0245d5c44e1bede
+
+        
 </head>
 <body class="light">
+    <?php 
+    if(empty($_SESSION['no_id'])){ 
+        echo "<script> window.location = '".base_url()."'; </script>";
+        exit;
+    }
+    ?>
+    <!-- custom css -->
+    <style type="text/css">
+    .container-form{
+        padding-top: 20px;
+        color: black;
+    }
+    label{
+        font-weight: bold;
+    }
+    th{
+      font-weight: bold;
+    }
+</style>
+
+<!-- custom php -->
+<?php 
+function selected($id,$idx){
+    if($id==$idx){
+        return "selected";
+    }
+}
+
+?>
+
 <!-- Pre loader -->
 <div id="loader" class="loader">
     <div class="plane-container">
@@ -117,7 +140,7 @@
      */
     document.body.className += ' sidebar-top-offset';
 </script>
-<aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
+<aside class="main-sidebar fixed offcanvas shadow " data-toggle='offcanvas'>
     <section class="sidebar">
         <div class="relative">
             <div class="user-panel p-3 user-panel-bg light text-black mb-2">
@@ -126,7 +149,7 @@
                         <img src="assets/img/dummy/u1.png" alt="User Image" class="">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Piere Davidson</h6>
+                        <h6 class="font-weight-light mt-2 mb-1"><?php echo $_SESSION['nama'] ?></h6>
                         <a href="#"><i class="icon-circle text-primary blink"></i> Online</a>
                     </div>
                 </div>
@@ -136,9 +159,9 @@
 
         <ul class="sidebar-menu">
             <li class="header light "><strong>MAIN NAVIGATION</strong></li>
-            <li class="treeview"><a href="#"><i class="icon icon icon-package s-18"></i><span>Dashboard</span></a></li>
+            <li class="treeview"><a href="dashboard"><i class="icon icon icon-package s-18"></i><span>Dashboard</span></a></li>
             
-<<<<<<< HEAD
+
             <?php if($_SESSION['kategori']=="Admin"){ ?>
             <li class="header light mt-3"><strong>ADMIN PANEL</strong></li>
             <li class="treeview"><a href="user"><i class="icon icon-account_box s-18"></i>Users</a></li>
@@ -151,17 +174,8 @@
             <li class="treeview"><a href="#"><i class="icon icon-list s-18"></i>Daftar Kreditor</a></li>
             <li class="treeview"><a href="#"><i class="icon icon-list s-18"></i>Daftar Debitor</a></li>
             <li class="treeview"><a href="kredit_salur"><i class="icon icon-payment s-18"></i>Daftar Kredit yang Disalurkan</a></li>
-=======
-            
-            <li class="header light "><strong>Referensi</strong></li>
-             <li class=""><a href="profil_perusahaan"><i class="icon icon-business_center s-18"></i>Profil Perusahaan</a></li>
-             <li class=""><a href="coa"><i class="icon icon-user s-18"></i>Daftar dan Penjelasan Akun</a></li>
-             <li class=""><a href="kebijakan_akuntansi"><i class="icon icon-assignment_turned_in s-18"></i>Kebijakan Akuntansi</a></li>
-             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Kreditor</a></li>
-             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Debitor</a></li>
-             <li class=""><a href="#"><i class="icon icon-card_membership s-18"></i>Daftar Kredit yang disalurkan</a></li>
-            </li>
 
+            
             <li class="header light "><strong>Jurnal</strong></li>
             <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Umum</a></li>
             <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penyesuaian</a></li>
@@ -173,28 +187,31 @@
             <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Penyaluran Kredit Chanelling</a></li>
             <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Kas Masuk</a></li>
             <li><a href="#"><i class="icon icon-import_contacts s-18"></i>Jurnal Kas Keluar</a></li>
->>>>>>> b1c4d73c7817ec1ca80a717db0245d5c44e1bede
+
         </ul>
     </section>
 </aside>
 <!--Sidebar End-->
 <div class="sticky">
     <div class="d-lg-flex">
-        <div class="relative indigo lighten-2 brand-wrapper">
-            <div class="d-flex">
-                <div class="text-xs-center">
-                    <div class="w-80px mt-3 mb-3 ml-3">
-                        <img src="assets/img/basic/logo-white.png" alt="">
-                    </div>
+        <div class="relative indigo lighten-2 col-md-2-dim " style="height: 60px; ">
+            <div style="">
+            <a href="#" data-toggle="push-menu" class="paper-nav-toggle ">  <i></i>  </a>
+            </div>
+            <div class="d-flex" >
+
+                <div class="col-md-8 col-5" style="text-align: center;">
+
+                <img class="img-fluid" style=" position: relative; " src="<?= base_url('assets/img/logo_invert.png'); ?>" >
+
                 </div>
             </div>
         </div>
         <div class="flex-fill">
             <div class="navbar navbar-expand d-flex justify-content-between bd-navbar white shadow ">
-                <div>
-                    <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle">
-                        <i></i>
-                    </a>
+                <div style="">
+                    
+                   
                 </div>
                 <!--Top Menu Start -->
 <div class="navbar-custom-menu">
@@ -226,7 +243,7 @@
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu ">
             <a href="#" class="nav-link" data-toggle="dropdown">
-                <img src="assets/img/dummy/u8.png" class="user-image" alt="User Image">
+                <img src="assets/img/dummy/u1.png" class="user-image" alt="User Image">
                 <i class="icon-more_vert "></i>
             </a>
             <div class="dropdown-menu p-4 dropdown-menu-right">
@@ -243,13 +260,15 @@
                         <div class="pt-1">Update Passwword</div>
                     </a></div>
                     <div class="col">
-                        <a href="#">
+                        <a href="#" id="logout">
                             <i class="icon-arrow_forward red lighten-2 avatar  r-5"></i>
                             <div class="pt-1">Logout</div>
                         </a>
                     </div>
                 </div>
+
             </div>
+
         </li>
     </ul>
 </div>

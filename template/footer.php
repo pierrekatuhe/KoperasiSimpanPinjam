@@ -10,14 +10,35 @@
 <script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
-<<<<<<< HEAD
-=======
 <script type="text/javascript">
 	$(document).ready( function () {
 	    $('.dataTable').DataTable();
 	} );
+
+	$("#logout").click(function (event) {
+    $.ajax({
+        type: 'POST',
+        url: base_url + 'config/logout',
+        data: '',
+        cache: false,
+        async: true,
+        success: function (data) {
+            if (data) {
+                pesan_berhasil_swal('Berhasil!', 'Berhasil Logout!', base_url);
+            } else {
+                pesan_error('Gagal!', 'Logout Gagal!');
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            pesan_error("Gagal!", errorThrown);
+        }
+    });
+    event.preventDefault(); //Prevent the default submit
+    return false; //stop
+});
 </script>
->>>>>>> b1c4d73c7817ec1ca80a717db0245d5c44e1bede
+
+
 <!--
 --- Footer Part - Use Jquery anywhere at page.
 --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/

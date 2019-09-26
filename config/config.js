@@ -94,6 +94,7 @@ function simple_ajax(datax, url_api, lokasi_berhasil = "", pesan_berhasil = "", 
           pesan_tunggu(); //ini biar nampak loading nya
         },
         success: function (data) {
+          console.log(data);
             swal.close();
             if (data == '1') {
                 //pesan(data);
